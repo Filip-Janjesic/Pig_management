@@ -34,10 +34,17 @@ create table poljoprivredno_zemljiste(
 	sredstvo varchar(25)
 );
 
-create table tip_tla (
+create table tip_tla(
 	koordinate decimal(5.10),
 	sastav varchar (100) not null,
 	poljoprivredno_zemljiste int not null,
 	kultura int not null
+);
+
+create table kultura(
+	naziv varchar(50) not null,
+	sorta varchar(50) not null,
+	datum_sjetve datetime not null,
+	datum_zetve datetime not null
 );
 
