@@ -42,7 +42,7 @@ create table tip_tla(
 );
 
 create table kultura(
-	sifra not null primary key auto_increment,
+	sifra int not null primary key auto_increment,
 	naziv varchar(50) not null,
 	sorta varchar(50) not null,
 	datum_sjetve datetime not null,
@@ -50,11 +50,11 @@ create table kultura(
 );
 
 create table mehanizacija(
-	sifra not null primary key auto_increment,
+	sifra int not null primary key auto_increment,
 	naziv varchar(50) not null,
 	model varchar(50) not null,	
 	operacija int not null,
-	tip_tla int not null,
+	tip_tla int not null
 );
 
 
