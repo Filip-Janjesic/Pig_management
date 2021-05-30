@@ -24,3 +24,14 @@ create table operacija(
 	pocetak datetime not null,
 	kraj datetime
 );
+
+create table poljoprivredno_zemljiste(
+	sifra int not null key auto_increment;
+	koordinate decimal(5.10),
+	kultura int not null,
+	povrsina decimal (10.5) not null,
+	tip_tla int,
+	sredstvo varchar(25), 
+;)
+
+
