@@ -15,7 +15,7 @@ create table opg(
 );
 
 create table operacija(
-	sifra int not null primary key auto_increment;
+	sifra int not null primary key auto_increment,
 	naziv varchar(50) not null,
 	mehanizacija int not null,
 	poljoprivredno_zemljiste int not null,
@@ -26,12 +26,18 @@ create table operacija(
 );
 
 create table poljoprivredno_zemljiste(
-	sifra int not null key auto_increment;
+	sifra int not null key auto_increment,
 	koordinate decimal(5.10),
 	kultura int not null,
 	povrsina decimal (10.5) not null,
 	tip_tla int,
-	sredstvo varchar(25), 
-;)
+	sredstvo varchar(25)
+);
 
+create table tip_tla (
+	koordinate decimal(5.10),
+	sastav varchar (100) not null,
+	poljoprivredno_zemljiste int not null,
+	kultura int not null
+);
 
