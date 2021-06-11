@@ -10,7 +10,7 @@ create table opg(
 	postanski_broj char (5),
 	radnici int not null,
 	kultura int not null,
-	poljopricredno_zemljiste int not null,
+	poljoprivredno_zemljiste int not null,
 	mehanizacija int not null
 );
 
@@ -35,7 +35,7 @@ create table poljoprivredno_zemljiste(
 );
 
 create table tip_tla(
-	koordinate decimal(5.10),
+	koordinate decimal(5,10),
 	sastav varchar (100) not null,
 	poljoprivredno_zemljiste int not null,
 	kultura int not null
