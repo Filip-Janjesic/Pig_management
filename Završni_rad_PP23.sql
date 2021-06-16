@@ -58,5 +58,5 @@ create table mehanizacija(
 );
 
 
-
+alter table opg add foreign key (poljoprivredno_zemljište) references poljoprivredno_zemljište (sifra);
 
