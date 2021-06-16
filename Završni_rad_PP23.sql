@@ -35,7 +35,7 @@ create table poljoprivredno_zemljiste(
 );
 
 create table tip_tla(
-	koordinate decimal(5,10),
+	koordinate decimal(5.10),
 	sastav varchar (100) not null,
 	poljoprivredno_zemljiste int not null,
 	kultura int not null
@@ -58,5 +58,5 @@ create table mehanizacija(
 );
 
 
-alter table opg add foreign key (poljoprivredno_zemljište) references poljoprivredno_zemljište (sifra);
+alter table opg add foreign key (poljoprivredno_zemljiste) references poljoprivredno_zemljiste (sifra);
 
