@@ -35,6 +35,7 @@ create table poljoprivredno_zemljiste(
 );
 
 create table tip_tla(
+	sifra int not null key auto_increment,
 	koordinate decimal(5.10),
 	sastav varchar (100) not null,
 	poljoprivredno_zemljiste int not null,
@@ -59,4 +60,20 @@ create table mehanizacija(
 
 
 alter table opg add foreign key (poljoprivredno_zemljiste) references poljoprivredno_zemljiste (sifra);
+alter table poljoprivredno_zemljiste add foreign key (tip_tla) references tip_tla (sifra);
+alter table tip_tla add foreign key (poljoprivredno_zemljiste) references poljoprivredno_zemljiste (sifra);
+alter table mehanizacija add foreign key (operacija) references operacija (sifra);
+alter table mehanizacija add foreign key (tip_tla) references tip_tla (sifra);
+
+
+
+
+
+
+
+
+
+
+
+
 
