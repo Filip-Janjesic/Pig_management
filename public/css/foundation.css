@@ -6373,3 +6373,7 @@ a.thumbnail {
 .long-delay {
   -webkit-animation-delay: 700ms !important;
           animation-delay: 700ms !important; }
+
+          p.with-eight {
+            text-shadow: 0.05em 0 white, 0 0.05em white, -0.05em 0 white, 0 -0.05em white, -0.05em -0.05em white, -0.05em 0.05em white, 0.05em -0.05em white, 0.05em 0.05em white;
+          }
