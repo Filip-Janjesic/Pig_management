@@ -14,14 +14,6 @@ create table opg(
 	mehanizacija int
 );
 
-
-insert into opg(email,lozinka,ime,prezime,uloga) values 
-('admin@edunova.hr','$2y$10$sc61AG4pNc2ddh4SVRYr1.VVaH58j8LRf03QkUwrC1AKN95acN.qu',
-'Administrator','Edunova','admin'),
-('oper@edunova.hr','$2y$10$sc61AG4pNc2ddh4SVRYr1.VVaH58j8LRf03QkUwrC1AKN95acN.qu',
-'Operater','Edunova','oper');
-
-
 create table operacija(
 	sifra int not null primary key auto_increment,
 	naziv varchar(50) not null,
@@ -71,11 +63,17 @@ create table radnici(
 	ime varchar(50) not null,
 	prezime varchar(50) not null,
 	uloga varchar(50) not null,
-	nivo obrazovanja varchar (50)
+	nivo_obrazovanja varchar (50)
 );
 
 
 alter table opg add foreign key (poljoprivredno_zemljiste) references poljoprivredno_zemljiste (sifra);
+alter table opg add foreign key (mehanizacija) references mehanizacija (sifra);
+alter table opg add foreign key (kultura) references kultura (sifra);
+alter table opg add foreign key (radnici) references radnici (sifra);
+
+
+
 alter table poljoprivredno_zemljiste add foreign key (tip_tla) references tip_tla (sifra);
 alter table tip_tla add foreign key (poljoprivredno_zemljiste) references poljoprivredno_zemljiste (sifra);
 alter table mehanizacija add foreign key (operacija) references operacija (sifra);
