@@ -2,44 +2,22 @@ drop database if exists zavrsni_rad_PP23;
 create database zavrsni_rad_PP23;
 use zavrsni_rad_PP23;
 
+
 create table opg(
 	sifra int not null primary key auto_increment,
 	mipbg varchar (11) not null,
-	adresa varchar (50),
+	adresa varchar (50) not null,
 	mjesto varchar (50) not null,
-	postanski_broj char (5),
-	radnici int,
-	kultura int,
-	poljoprivredno_zemljiste int,
-	mehanizacija int
+	postanski_broj char (5) not null
 );
 
-create table operacija(
+create table sredstvo(
 	sifra int not null primary key auto_increment,
-	naziv varchar(50) not null,
-	mehanizacija int not null,
-	poljoprivredno_zemljiste int not null,
-	kultura int not null,
-	sredstvo varchar(25),
-	pocetak datetime not null,
-	kraj datetime
-);
-
-create table poljoprivredno_zemljiste(
-	sifra int not null key auto_increment,
-	koordinate decimal(5.10),
-	kultura int not null,
-	povrsina decimal (10.5) not null,
-	tip_tla int,
-	sredstvo varchar(25)
-);
-
-create table tip_tla(
-	sifra int not null key auto_increment,
-	koordinate decimal(5.10),
-	sastav varchar (100) not null,
-	poljoprivredno_zemljiste int not null,
-	kultura int not null
+	opg int not null,
+	mehanizacija varchar (255) not null,
+	pesticid varchar (255) not null,
+	hranjiva_tvar varchar (255) not null,
+	alat varchar (255)
 );
 
 create table kultura(
@@ -47,44 +25,33 @@ create table kultura(
 	naziv varchar(50) not null,
 	sorta varchar(50) not null,
 	datum_sjetve datetime not null,
-	datum_zetve datetime not null
+	datum_zetve datetime not null,
+	sredstvo int not null,
+	opg int not null
 );
 
-create table mehanizacija(
+create table vlasnik(
 	sifra int not null primary key auto_increment,
-	naziv varchar(50) not null,
-	model varchar(50) not null,	
-	operacija int not null,
-	tip_tla int not null
+	ime varchar(50) not null,
+	prezime varchar(50) not null,
+	oib varchar (11) not null,
+	username varchar(50) not null,
+    password varchar(255) not null,
+    opg int not null,
+    email varchar(255) not null
 );
 
-create table radnici(
+create table radnik(
 	sifra int not null primary key auto_increment,
 	ime varchar(50) not null,
 	prezime varchar(50) not null,
 	uloga varchar(50) not null,
-	nivo_obrazovanja varchar (50)
+	vlasnik int not null
 );
 
 
-alter table opg add foreign key (poljoprivredno_zemljiste) references poljoprivredno_zemljiste (sifra);
-alter table opg add foreign key (mehanizacija) references mehanizacija (sifra);
-alter table opg add foreign key (kultura) references kultura (sifra);
-alter table opg add foreign key (radnici) references radnici (sifra);
-
-
-
-alter table poljoprivredno_zemljiste add foreign key (tip_tla) references tip_tla (sifra);
-alter table tip_tla add foreign key (poljoprivredno_zemljiste) references poljoprivredno_zemljiste (sifra);
-alter table mehanizacija add foreign key (operacija) references operacija (sifra);
-alter table mehanizacija add foreign key (tip_tla) references tip_tla (sifra);
-
-
-
-
-
-
-
-
-
-
+alter table sredstvo add foreign key (opg) references opg(sifra);
+alter table kultura add foreign key (opg) references opg(sifra);
+alter table kultura add foreign key (sredstvo) references sredstvo(sifra);
+alter table vlasnik add foreign key (opg) references opg(sifra);
+alter table radnik add foreign key (vlasnik) references vlasnik(sifra);
