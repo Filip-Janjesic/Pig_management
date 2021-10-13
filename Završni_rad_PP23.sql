@@ -5,10 +5,16 @@ use zavrsni_rad_PP23;
 
 create table opg(
 	sifra int not null primary key auto_increment,
-	mipbg varchar (11) not null,
+	mipbg char (11) not null,
 	adresa varchar (50) not null,
 	mjesto varchar (50) not null,
-	postanski_broj char (5) not null
+	postanski_broj char (5) not null,
+	ime varchar(50) not null,
+	prezime varchar(50) not null,
+	oib char (11) not null,
+	username varchar(50) not null,
+    password varchar(62) not null,
+    email varchar(62) not null
 );
 
 create table sredstvo(
@@ -30,28 +36,16 @@ create table kultura(
 	opg int not null
 );
 
-create table vlasnik(
-	sifra int not null primary key auto_increment,
-	ime varchar(50) not null,
-	prezime varchar(50) not null,
-	oib varchar (11) not null,
-	username varchar(50) not null,
-    password varchar(255) not null,
-    opg int not null,
-    email varchar(255) not null
-);
-
 create table radnik(
 	sifra int not null primary key auto_increment,
 	ime varchar(50) not null,
 	prezime varchar(50) not null,
 	uloga varchar(50) not null,
-	vlasnik int not null
+	opg int not null
 );
 
 
 alter table sredstvo add foreign key (opg) references opg(sifra);
 alter table kultura add foreign key (opg) references opg(sifra);
 alter table kultura add foreign key (sredstvo) references sredstvo(sifra);
-alter table vlasnik add foreign key (opg) references opg(sifra);
-alter table radnik add foreign key (vlasnik) references vlasnik(sifra);
+alter table radnik add foreign key (opg) references opg(sifra);
