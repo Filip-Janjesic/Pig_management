@@ -1,3 +1,12 @@
 <div class="callout" style="background-color:lightgreen">
-&copy; Završni rad PP23 <a href="https://github.com/Filip-Janjesic" target="_blank"> Filip Janješić </a> 2021 - <?php echo date('Y'); ?> </br>
+&copy; Završni rad PP23 <a href="https://github.com/Filip-Janjesic" target="_blank"> Filip Janješić </a> 
+<?php $godina = date('Y');
+if($godina!='2021'){
+    ?>
+ 2021 - <?php echo $godina; ?> 
+    <?php
+}else{
+    echo '2021';
+}
+?>
 </div>

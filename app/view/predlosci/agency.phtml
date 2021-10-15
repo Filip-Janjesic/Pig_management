@@ -14,11 +14,18 @@
       <div class="top-bar-left">
         <ul class="menu">
           <li class="menu-text" style="color:green"> Dobrodošli 🚜 </li>
+          <li><a href="<?=App::config('url')?>">Početna</a></li>
         </ul>
       </div>
       <div class="top-bar-right">
         <ul class="menu">
-          <li><a href="#" style="color:black" >Prijavi se</a></li>
+          <li>
+          <?php if(!Request::isAutoriziran()): ?>
+        <a href="<?=App::config('url')?>index/login">Prijava</a>
+      <?php else:?>
+        <a href="<?=App::config('url')?>index/logout">Odjava <?=Request::user()?></a>
+      <?php endif; ?>
+        </li>
         </ul>
       </div>
     </div>
@@ -70,6 +77,3 @@
 
   </body>
 </html>
-
-
-
