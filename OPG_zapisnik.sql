@@ -37,7 +37,7 @@ CREATE TABLE pig (
   id int not null primary key auto_increment,
   opg int not null,
   pig_no varchar(255) not null,
-  breed varchar(255) not null,
+  breed int not null,
   weight varchar(10) not null,
   img varchar(255) not null,
   gender varchar(10) not null,
@@ -55,7 +55,7 @@ INSERT INTO pig (id, opg, pigno, breed, weight, img, gender, arrived, remark, he
 
 CREATE TABLE quarantine (
   id int not null primary key auto_increment,
-  pig_no varchar(50) not null,
+  pig int not null,
   date_q varchar(10) not null,
   reason text not null,
   opg int not null, 
@@ -63,6 +63,9 @@ CREATE TABLE quarantine (
 );
 
 alter table pig add foreign key (opg) references opg(id);
-alter table breed add foreign key (pig) references pig(id);
+alter table pig add foreign key (breed) references breed(id);
 alter table quarantine add foreign key (opg) references opg(id);
-alter table pig add foreign key (quarantine) references quarantine(id);
+alter table quarantine add foreign key (pig) references pig(id);
+
+
+
