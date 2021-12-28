@@ -1,4 +1,5 @@
 {
+	{
 	"Konfiguracija": {
 		"prefix": ["config"],
 		"body": ["<?=App::config('$1')?>"],
@@ -9,5 +10,4 @@
 		"body": ["Pero $1 Marko"],
 		"description": "Primjer drugog"
 	}
-
 }
