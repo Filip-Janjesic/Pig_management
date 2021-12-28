@@ -1,5 +1,5 @@
-<?php include 'setting/system.php'; ?>
-<?php include 'theme/head.php'; ?>
+<?php include 'app/core/system.php'; ?>
+<?php include 'app/view/head.php'; ?>
 
 <div class="container">
 	<div class="row" style="margin-top: 10%">
@@ -67,4 +67,4 @@
 </div>
 
 
-<?php include 'theme/foot.php'; ?>
+<?php include 'app/view/foot.php'; ?>
