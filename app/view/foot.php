@@ -25,6 +25,12 @@ function w3_close() {
     mySidebar.style.display = "none";
     overlayBg.style.display = "none";
 }
+
 </script>
+
+<div>
+&copy; Završni rad PP23 <a href="https://github.com/Filip-Janjesic" target="_blank"> Filip Janješić </a> 2021 - <?php echo date('Y'); ?> </br>
+</div>
+
 </body>
 </html>
