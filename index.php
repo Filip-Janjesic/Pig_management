@@ -1,5 +1,12 @@
 <?php include 'app/core/system.php'; ?>
 <?php include 'app/view/head.php'; ?>
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+session_start();
+?>
 
 <div class="container">
 	<div class="row" style="margin-top: 10%">

@@ -1,7 +1,7 @@
-<?php include 'setting/system.php'; ?>
-<?php include 'theme/head.php'; ?>
-<?php include 'theme/sidebar.php'; ?>
-<?php include 'session.php'; ?>
+<?php include '../../core/system.php'; ?>
+<?php include '../../view/head.php'; ?>
+<?php include '../../view/sidebar.php'; ?>
+<?php include '/../../session.php'; ?>
 
 
 

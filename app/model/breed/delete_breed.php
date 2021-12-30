@@ -1,5 +1,5 @@
 <?php 
-include 'setting/system.php';
+include '/../../core/system.php';
 
 if(isset($_POST['removed'])){
 	$id=$_POST['selector'];
