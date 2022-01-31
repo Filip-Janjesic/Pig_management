@@ -1,5 +1,5 @@
 {
-	"Konfiguracija": {
+	"Configuration": {
 		"prefix": ["config"],
 		"body": ["<?=App::config('$1')?>"],
 		"description": "Unesi ključ pod kojim se nalazi vrijednost u konfiguraciji"
