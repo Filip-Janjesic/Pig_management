@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 session_start();
 
-define('BP',__DIR__ . DIRECTORY_SEPARTOR);
+define('BP',__DIR__ . DIRECTORY_SEPARATOR);
 define('BP_APP',__DIR__ . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR);
 
 $path = implode(
