@@ -7,7 +7,7 @@ class DB extends PDO
     {
         $dsn = 'mysql:host' . $base['server'] . ';dbname=' . 
         $base['base'] . ';charset = utf8mb4';
-        parent::__construct($dsn,$base['user'],$base['password'])
+        parent::__construct($dsn,$base['user'],$base['password']);
         $this->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
     }
 
@@ -16,6 +16,6 @@ class DB extends PDO
         if(self::$instance==null){
             self::$instance = new self(App::config('base'));
         }
-        return self::$instance
+        return self::$instance;
     }
 }

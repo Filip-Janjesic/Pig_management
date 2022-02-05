@@ -16,7 +16,7 @@ class App
         }
         $class .= 'Controller';
 
-        $method = ''
+        $method = '';
         if(!isset($parts [2]) || $parts [2]==''){
             $method = 'index';
         }else{

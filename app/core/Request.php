@@ -10,7 +10,7 @@ class Request
         }else if (isset($_SERVER['REQUEST_URI'])){
             $route = $_SERVER['REQUEST_URI'];
         }
-        return $route
+        return $route;
     }
 
     public static function isAuthorized()
