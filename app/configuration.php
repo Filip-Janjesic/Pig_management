@@ -8,7 +8,7 @@ if($_SERVER['SERVER_ADDR'] === '127.0.0.1'){
 
 return [
     'localhost' => $localhost,
-    'nameAPP' => '',
+    'nameAPP' => 'Pig managment',
     'url' => 'http://Pig_managment.xyz/',
     'database' => [
         'server' => 'localhost',
