@@ -3,31 +3,30 @@
     <ul class="dropdown menu" data-dropdown-menu>
       <li class="menu-text"><?=App::config('nameAPP')?></li>
       <li><a href="<?=App::config('url')?>">Početna</a></li>
-      <?php if(Request::isAutoriziran()): ?>
+      <?php if(Request::isAuthorized()): ?>
         <li><a href="<?=App::config('url')?>nadzornaploca/index">Nadzorna ploča</a></li>
         <li>
           <a href="#">Programi</a>
           <ul class="menu vertical">
-            <li><a href="<?=App::config('url')?>smjer/index">Smjerovi</a></li>
-            <li><a href="<?=App::config('url')?>predavac/index">Predavači</a></li>
-            <li><a href="<?=App::config('url')?>polaznik/index">Polaznici</a></li>
-            <li><a href="<?=App::config('url')?>grupa/index">Grupe</a></li>
+            <li><a href="<?=App::config('url')?>breed/index">Breed</a></li>
+            <li><a href="<?=App::config('url')?>farmer/index">Farmer</a></li>
+            <li><a href="<?=App::config('url')?>pig/index">Pig</a></li>
+            <li><a href="<?=App::config('url')?>quarantine/index">Quarantine</a></li>
             <?php if(Request::isAdmin()): ?>
-              <li><a href="#">Operateri</a></li>
+              <li><a href="#">Admin</a></li>
             <?php endif; ?>
           </ul>
         </li>
       <?php endif; ?>
-      <li><a href="<?=App::config('url')?>index/onama">O nama</a></li>
     </ul>
   </div>
   <div class="top-bar-right">
     <ul class="menu">
       <li>
-      <?php if(!Request::isAutoriziran()): ?>
+      <?php if(!Request::isAuthorized()): ?>
         <a href="<?=App::config('url')?>index/login">Login</a>
       <?php else:?>
-        <a href="<?=App::config('url')?>index/logout">Odjava <?=Request::user()?></a>
+        <a href="<?=App::config('url')?>index/logout">Logout <?=Request::user()?></a>
       <?php endif; ?>
       </li>
     </ul>
