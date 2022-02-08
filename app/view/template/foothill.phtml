@@ -1,12 +1,12 @@
 <div class="<?php echo App::config('dev') ? 'alert ' : ''; ?>callout">
-&copy; Edunova
+&copy; Pig_management
 <?php $godina = date('Y');
-if($godina!='2021'){
+if($godina!='2022'){
     ?>
- 2021 - <?php echo $godina; ?> 
+ 2022 - <?php echo $godina; ?> 
     <?php
 }else{
-    echo '2021';
+    echo '2022';
 }
 ?><?php echo App::config('dev') ? ', last git hash ' . Utilities::verzija() : '';?>
 </div>
