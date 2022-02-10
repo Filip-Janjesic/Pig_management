@@ -1,0 +1,13 @@
+<form class="log-in-form" method="POST" 
+action="<?=App::config('url')?>index/autorization">
+  <h4 class="text-center">Login with your details</h4>
+  <label>Email
+    <input type="email" name="email" placeholder="admin@hpzs.hr"
+    value="<?=$email?>">
+  </label>
+  <label>Lozinka
+    <input type="password" name="lozinka" placeholder="Lozinka">
+  </label>
+  <p><input type="submit" class="button expanded" value="Prijavite se"></input></p>
+    <?=$message?>
+</form>
