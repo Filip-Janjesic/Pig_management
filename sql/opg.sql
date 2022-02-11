@@ -50,8 +50,8 @@ create table breed(
 );
 
 insert into breed(pig,name) values
-	(1,'Large White'),(2,'Large White'),(3,'Large White'),(4,'Large White'),(5,'Large White'),
-	(6,'Welsh '),(7,'Welsh '),(8,'Welsh '),(9,'Welsh '),(10,'Welsh ');
+	(1,'Large White'),(2,'Large White'),(3,'Large White'),(4,'Large White'),
+	(5,'Large White'),(6,'Welsh '),(7,'Welsh '),(8,'Welsh '),(9,'Welsh '),(10,'Welsh ');
 
 create table quarantine(
   id int not null primary key auto_increment,
