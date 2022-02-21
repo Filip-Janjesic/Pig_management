@@ -11,7 +11,11 @@ action="<?=App::config('url')?>pig/index">
 
         <div class="large-3 medium-6 cell">
             <div class="callout" style="text-align: center;">
-          
+                <img src="<?=App::config('url')?>public/img/pig/welsh.png"
+                alt="<?=$pig->breed?> <?$pig->gender?>">
+                <h1 class="farmName">
+                    <?=$pig->breed?> <?$pig->gender?>
+                </h1>
             
 
 
