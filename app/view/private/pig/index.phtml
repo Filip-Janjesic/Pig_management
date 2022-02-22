@@ -16,19 +16,19 @@ action="<?=App::config('url')?>pig/index">
                 <h1 class="farmName">
                     <?=$pig->breed?> <?$pig->gender?>
                 </h1>
-            
-
-
-
-
-
-
-
-
-
-            <?php else:?>
-                            <i title="Ne može se obrisati jer sudjeluje na grupama(<?=$polaznik->grupa?>)" style="color: gray; margin-left: 20px;" class="fas fa-2x fa-trash-alt"></i>
-            <?php endif;?>
+                <div class="sucess callout">
+                     <a href="<?=App::config('url')?>pig/details/<?=$pig->id?>">
+                        <i title ="Change" class="fas fa-2x fa-pencil-alt"></i>
+                        </a>
+                        <?php if ($pig->farm==0): ?>
+                        <a
+                        onclick="return confirm('Are you sure you want to delete the pig &#34;<?=$pig->breed?> <?$pig->gender?>&#34;?');"
+                        href="<?=App::config('url')?>pig/delete/<?=$pig->id?>">
+                            <i title="Delete" style="color: red; margin-left: 20px;" class="fas fa-2x fa-trash-alt"></i>
+                        </a>
+                        <?php else:?>
+                            <i title="Can not be deleted because it belongs to a farm(<?=$pig->farm?>)" style="color: gray; margin-left: 20px;" class="fas fa-2x fa-trash-alt"></i>
+                        <?php endif;?>
                 </div>  
             </div>
         </div>
