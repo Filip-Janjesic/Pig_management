@@ -1,0 +1,16 @@
+<div style="width: 100%; text-align: center;">
+<nav aria-label="Pagination">
+    <ul class="pagination">
+        <li class="pagination-previous">
+            <a href="<?=App::config('url')?>pig/index?stranica=<?php echo $page-1 ?>$condition=<?=$condition?>">
+            Previous <span class="show-for-sr"> page </span></a></li>
+        <li class="current">
+            <span class="show-for-sr">
+            You are on page
+            </span> <?=$page?></li>
+        <li class="pagination-next">
+            <a href="<?=App::config('url')?>pig/index?stranica=<?php echo $page+1 ?>$condition=<?=$condition?>" aria-label="Next page">
+                Next <span class="show-for-sr"> page </span></a></li>
+    </ul>
+</nav>
+</div>
