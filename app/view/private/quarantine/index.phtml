@@ -1,0 +1,32 @@
+<a href="<?=App::config('url')?>grupa/nova" 
+class="success button expanded">New quarantine</a>
+<table>
+    <thead>
+        <tr>
+            <th>Pig</th>
+            <th>Date of quarantine</th>
+            <th>Reason</th>
+            <th>Farm</th>
+            <th>Breed</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($quarantines as $quarantine): ?>
+            <tr>
+                <td><?=$quarantine->pig?></td>
+                 <td><?=$quarantine->reason?></td>
+                <td><?=$quarantine->farm?></td>
+                <td><?=$quarantine->breed?></td>
+                <td>
+                    <?=$quarantine->date_q==null ? '' : date('d. m. Y.', strtotime($quarantine->date_q))?>
+                </td>
+                <td>
+                    
+
+
+                </td>
+            </tr>
+        <?php endforeach;?>
+    </tbody>
+</table>
