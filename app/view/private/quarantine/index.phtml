@@ -1,4 +1,4 @@
-<a href="<?=App::config('url')?>grupa/nova" 
+<a href="<?=App::config('url')?>quarantine/new" 
 class="success button expanded">New quarantine</a>
 <table>
     <thead>
@@ -22,9 +22,18 @@ class="success button expanded">New quarantine</a>
                     <?=$quarantine->date_q==null ? '' : date('d. m. Y.', strtotime($quarantine->date_q))?>
                 </td>
                 <td>
-                    
-
-
+                    <a href="<?=App::config('url')?>quarantine/details/<?=$quarantine->id?>">
+                        <i title="Change" class="fas fa-2x fa-pencil-alt"></i>
+                    </a>
+                    <?php if ($quarantine->pigs==0): ?>
+                    <a
+                    onclick="return confirm('Are you sure you want to delete the quarantine &#34;<?=$quarantine->name?>&#34;?');"
+                    href="<?=App::config('url')?>quarantine/delete?id=<?=$quarantine->id?>">
+                        <i title="Delete" style="color: red; margin-left: 20px;" class="fas fa-2x fa-trash-alt"></i>
+                    </a>
+                    <?php else:?>
+                        <i title="It cannot be deleted because it has pigs(<?=$quarantine->pigs?>)" style="color: gray; margin-left: 20px;" class="fas fa-2x fa-trash-alt"></i>
+                    <?php endif;?>
                 </td>
             </tr>
         <?php endforeach;?>
